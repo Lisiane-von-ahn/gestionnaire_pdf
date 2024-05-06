@@ -10,8 +10,8 @@ pdf_files = []
 # Fonction pour afficher les fichiers PDF
 def display_pdf(pdf_data):
     base64_pdf = base64.b64encode(pdf_data).decode('utf-8')
-    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-    st.markdown(pdf_display, unsafe_allow_html=True)
+    affiche_fichier = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
+    st.markdown(affiche_fichier, unsafe_allow_html=True)
 
 checkbox_result = st.checkbox('Afficher Preview ?')
 
@@ -38,4 +38,5 @@ if fichiers_uploades:
             afficher_accordion(fichier_uploadé.name,liens)        
             
             if checkbox_result == True:
-                display_pdf(données_pdf)
+                with st.expander("Preview du fichier"):
+                    display_pdf(données_pdf)
