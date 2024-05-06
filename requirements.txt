@@ -1,3 +1,4 @@
 streamlit
 PyPDF2<3.0
 requests
+streamlit_pdf_viewer

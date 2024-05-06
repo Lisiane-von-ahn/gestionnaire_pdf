@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_pdf_viewer import pdf_viewer
 import base64
 from util import *
 
@@ -9,9 +10,7 @@ pdf_files = []
 
 # Fonction pour afficher les fichiers PDF
 def display_pdf(pdf_data):
-    base64_pdf = base64.b64encode(pdf_data).decode('utf-8')
-    affiche_fichier = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
-    st.markdown(affiche_fichier, unsafe_allow_html=True)
+    pdf_viewer(input=pdf_data, width=700)
 
 checkbox_result = st.checkbox('Afficher Preview ?')
 
