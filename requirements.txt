@@ -1,4 +1,7 @@
-streamlit
-PyPDF2<3.0
-requests
+pymupdf
+pdfplumber
+streamlit 
 streamlit_pdf_viewer
+wheel
+PyPDF2
+psycopg2-binary
